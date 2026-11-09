@@ -3,188 +3,1540 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Beranda Resmi | MEROKET Official Apparel Indonesia</title>
-  <meta name="description" content="Meroket Official Apparel - Produsen dan distributor resmi pakaian pria & wanita: Celana Chino, Cargo, Jeans Denim, Kaos Combed, dan Kemeja berkualitas tinggi.">
+  <title>MEROKET CRM & ERP — Multi-Store Shopee Command Center</title>
+  <meta name="description" content="Aplikasi Dashboard CRM & ERP Internal Meroket Official Apparel — Pengelolaan Multi-Toko Shopee Pakaian Fisik dengan Isolasi Role Mandiri Bos vs Karyawan.">
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" href="/icon.svg" type="image/svg+xml">
-  <meta name="theme-color" content="#ea580c">
+  <meta name="theme-color" content="#0f172a">
   <style>
-    :root { --bg: #f8fafc; --dark: #0f172a; --brand: #ea580c; --brand-dark: #c2410c; --text: #1e293b; --muted: #64748b; --card: #ffffff; --border: #e2e8f0; }
+    :root {
+      --bg: #0b1120;
+      --bg-soft: #0f172a;
+      --panel: #1e293b;
+      --panel-hover: #263449;
+      --border: #334155;
+      --brand: #ea580c;
+      --brand-hover: #c2410c;
+      --brand-soft: rgba(234, 88, 12, 0.14);
+      --text: #f8fafc;
+      --text-sub: #cbd5e1;
+      --muted: #94a3b8;
+      --ok: #22c55e;
+      --ok-soft: rgba(34, 197, 94, 0.14);
+      --warn: #f59e0b;
+      --warn-soft: rgba(245, 158, 11, 0.14);
+      --danger: #ef4444;
+      --danger-soft: rgba(239, 68, 68, 0.14);
+      --info: #38bdf8;
+      --info-soft: rgba(56, 189, 248, 0.14);
+    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
-    header { background: var(--dark); color: #fff; position: sticky; top: 0; z-index: 50; border-bottom: 3px solid var(--brand); }
-    .container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
-    .navbar { display: flex; align-items: center; justify-content: space-between; min-height: 70px; flex-wrap: wrap; gap: 12px; padding: 10px 0; }
-    .brand { font-size: 1.4rem; font-weight: 800; color: #fff; text-decoration: none; letter-spacing: 0.5px; display: flex; align-items: center; gap: 10px; }
-    .brand span { color: var(--brand); }
-    .nav-links { display: flex; gap: 16px; flex-wrap: wrap; }
-    .nav-link { color: #cbd5e1; text-decoration: none; font-size: 0.95rem; font-weight: 500; padding: 6px 10px; border-radius: 6px; transition: 0.2s; }
-    .nav-link:hover, .nav-link.active { color: #fff; background: rgba(234, 88, 12, 0.25); }
-    .hero { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); color: #fff; padding: 72px 0; border-bottom: 1px solid #334155; }
-    .hero h1 { font-size: 2.5rem; line-height: 1.2; margin-bottom: 16px; }
-    .hero p { color: #cbd5e1; font-size: 1.1rem; max-width: 700px; margin-bottom: 28px; }
-    .btn { display: inline-block; background: var(--brand); color: #fff; text-decoration: none; padding: 12px 24px; border-radius: 8px; font-weight: 700; transition: 0.2s; border: none; cursor: pointer; }
-    .btn:hover { background: var(--brand-dark); }
-    .btn-outline { background: transparent; border: 2px solid #cbd5e1; margin-left: 10px; }
-    .section { padding: 56px 0; }
-    .section-title { font-size: 1.8rem; margin-bottom: 8px; color: var(--dark); }
-    .section-sub { color: var(--muted); margin-bottom: 32px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 24px; }
-    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between; }
-    .badge { display: inline-block; background: #ffedd5; color: #9a3412; font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 99px; margin-bottom: 10px; }
-    .price { font-size: 1.35rem; font-weight: 800; color: var(--brand); margin: 12px 0 4px; }
-    .old-price { font-size: 0.9rem; color: var(--muted); text-decoration: line-through; margin-left: 8px; font-weight: 400; }
-    .meta { font-size: 0.88rem; color: var(--muted); margin-bottom: 6px; }
-    footer { background: var(--dark); color: #94a3b8; padding: 48px 0 32px; margin-top: 60px; font-size: 0.92rem; }
-    .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; margin-bottom: 32px; }
-    footer h4 { color: #fff; margin-bottom: 12px; }
-    footer a { color: #cbd5e1; text-decoration: none; display: block; margin-bottom: 6px; }
-    .prose h2 { margin: 24px 0 10px; color: var(--dark); }
-    .prose p, .prose li { margin-bottom: 12px; color: #334155; }
-    .prose ul { padding-left: 20px; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+    a { color: var(--brand); text-decoration: none; }
+    button, input, select, textarea { font-family: inherit; }
+
+    /* ── GERBANG LOGIN MULTI-ROLE (FITUR 1) ─────────────────────────────────── */
+    #login-screen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: radial-gradient(circle at top right, #1e293b 0%, #0b1120 65%);
+    }
+    .login-wrap {
+      width: 100%;
+      max-width: 980px;
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+    }
+    @media (max-width: 820px) {
+      .login-wrap { grid-template-columns: 1fr; }
+    }
+    .login-hero {
+      padding: 36px;
+      background: linear-gradient(155deg, #0f172a 0%, #1e293b 100%);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .brand-logo {
+      font-size: 1.5rem;
+      font-weight: 900;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-logo span { color: var(--brand); }
+    .portal-pills {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .portal-pill {
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--muted);
+      cursor: pointer;
+      text-align: left;
+      transition: 0.18s;
+    }
+    .portal-pill.active {
+      border-color: var(--brand);
+      background: var(--brand-soft);
+      color: var(--text);
+    }
+    .portal-pill strong { display: block; font-size: 0.92rem; margin-bottom: 2px; }
+    .portal-pill small { font-size: 0.76rem; color: var(--muted); }
+
+    .login-form-box {
+      padding: 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .field { margin-bottom: 14px; }
+    .field label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-sub);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .input {
+      width: 100%;
+      padding: 11px 14px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.92rem;
+    }
+    .input:focus { outline: none; border-color: var(--brand); }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--brand);
+      color: #fff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    .btn:hover { background: var(--brand-hover); }
+    .btn-secondary {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-secondary:hover { background: var(--panel-hover); }
+    .btn-ok { background: #16a34a; }
+    .btn-ok:hover { background: #15803d; }
+    .btn-danger { background: #dc2626; }
+    .btn-danger:hover { background: #b91c1c; }
+    .btn-sm { padding: 6px 12px; font-size: 0.78rem; border-radius: 6px; }
+
+    .quick-accounts {
+      margin-top: 18px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .quick-btn {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      color: var(--text-sub);
+      padding: 8px 10px;
+      border-radius: 7px;
+      font-size: 0.78rem;
+      text-align: left;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    .quick-btn:hover { border-color: var(--brand); color: #fff; }
+    .quick-btn strong { display: block; color: #fff; }
+
+    /* ── STRUKTUR UTAMA DASHBOARD CRM & ERP ─────────────────────────────────── */
+    #app-screen { display: none; min-height: 100vh; flex-direction: column; }
+    .topbar {
+      background: #020617;
+      border-bottom: 2px solid var(--brand);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+    .topbar-left { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .topbar-right { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+
+    .store-switcher {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--panel);
+      border: 1px solid var(--brand);
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+    .store-switcher label {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--brand);
+      text-transform: uppercase;
+    }
+    .store-switcher select {
+      background: transparent;
+      border: none;
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      outline: none;
+    }
+    .store-switcher select option { background: var(--bg-soft); color: var(--text); }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+    .badge-boss { background: var(--brand-soft); color: #fb923c; border: 1px solid var(--brand); }
+    .badge-staff { background: var(--info-soft); color: var(--info); border: 1px solid var(--info); }
+    .badge-ok { background: var(--ok-soft); color: var(--ok); border: 1px solid var(--ok); }
+    .badge-warn { background: var(--warn-soft); color: var(--warn); border: 1px solid var(--warn); }
+    .badge-danger { background: var(--danger-soft); color: var(--danger); border: 1px solid var(--danger); }
+
+    .main-container {
+      max-width: 1400px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 22px 24px 60px;
+    }
+
+    /* Navigasi Tab Modul */
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 12px;
+    }
+    .nav-tab {
+      background: var(--panel);
+      color: var(--text-sub);
+      border: 1px solid var(--border);
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    .nav-tab:hover { border-color: var(--brand); color: #fff; }
+    .nav-tab.active {
+      background: var(--brand);
+      color: #fff;
+      border-color: var(--brand);
+    }
+    .nav-tab.locked {
+      opacity: 0.55;
+      border-style: dashed;
+    }
+
+    /* Banner Isolasi Role */
+    .isolation-banner {
+      padding: 14px 18px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .isolation-boss {
+      background: linear-gradient(90deg, rgba(234,88,12,0.18) 0%, rgba(30,41,59,0.9) 100%);
+      border: 1px solid var(--brand);
+    }
+    .isolation-staff {
+      background: linear-gradient(90deg, rgba(56,189,248,0.15) 0%, rgba(30,41,59,0.9) 100%);
+      border: 1px solid var(--info);
+    }
+
+    /* Grid Kartu Metrik */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    .metric-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .metric-card.boss-secret {
+      border-color: rgba(234, 88, 12, 0.65);
+      background: linear-gradient(160deg, #1e293b 0%, rgba(234, 88, 12, 0.09) 100%);
+    }
+    .metric-label {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+    .metric-val {
+      font-size: 1.55rem;
+      font-weight: 800;
+      margin: 6px 0 4px;
+      color: var(--text);
+    }
+    .metric-sub { font-size: 0.78rem; color: var(--text-sub); }
+
+    /* Panel & Tabel */
+    .panel-box {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 22px;
+    }
+    .panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .panel-title { font-size: 1.05rem; font-weight: 800; }
+    .panel-sub { font-size: 0.82rem; color: var(--muted); }
+
+    .table-wrap { overflow-x: auto; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+    }
+    th, td {
+      padding: 11px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: #0f172a;
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      letter-spacing: 0.4px;
+    }
+    tr:hover td { background: rgba(255, 255, 255, 0.02); }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .tab-pane { display: none; }
+    .tab-pane.active { display: block; }
+
+    /* Notifikasi Toast */
+    #toast-box {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-width: 420px;
+    }
+    .toast {
+      background: #0f172a;
+      border-left: 4px solid var(--brand);
+      border-top: 1px solid var(--border);
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      color: #fff;
+      padding: 12px 16px;
+      border-radius: 8px;
+      box-shadow: 0 12px 24px rgba(0,0,0,0.4);
+      font-size: 0.85rem;
+    }
+    .toast.ok { border-left-color: var(--ok); }
+    .toast.err { border-left-color: var(--danger); }
   </style>
 </head>
 <body>
-  <header>
-    <div class="container navbar">
-      <a href="/" class="brand">MEROKET <span>OFFICIAL</span></a>
-      <nav class="nav-links"><a href="/" class="nav-link active">Beranda</a><a href="/katalog" class="nav-link ">Katalog Produk</a><a href="/tentang-kami" class="nav-link ">Tentang Kami</a><a href="/kontak" class="nav-link ">Kontak Resmi</a><a href="/kebijakan-privasi" class="nav-link ">Kebijakan Privasi</a><a href="/syarat-layanan" class="nav-link ">Syarat Layanan</a></nav>
-    </div>
-  </header>
-  
-  <section class="hero">
-    <div class="container">
-      <span class="badge" style="background:#ea580c;color:#fff;">BRAND APPAREL FISIK RESMI INDONESIA</span>
-      <h1>Standar Baru Pakaian Harian Berkualitas Tinggi & Nyaman Dipakai</h1>
-      <p>Meroket Official memproduksi dan mendistribusikan koleksi pakaian pria dan wanita mulai dari Celana Chino Stretch, Celana Cargo Tactical, Jeans Denim 13 Oz, hingga Kaos Cotton Combed 24s dengan pengiriman kilat setiap hari melalui SPX Express dan J&T Express.</p>
-      <a href="/katalog" class="btn">Lihat Katalog Lengkap</a>
-      <a href="/tentang-kami" class="btn btn-outline">Profil Gudang & Konveksi</a>
-    </div>
-  </section>
-  <section class="section">
-    <div class="container">
-      <h2 class="section-title">Koleksi Produk Unggulan Meroket</h2>
-      <p class="section-sub">Seluruh stok produk tersinkronisasi langsung dengan gudang fisik utama Meroket.</p>
-      <div class="grid">
-  <div class="card">
-    <div>
-      <span class="badge">Celana Chino | SKU: MRK-CHINO-HTM-32</span>
-      <h3 style="font-size:1.12rem; margin-bottom:8px; color:#0f172a;">Celana Chino Panjang Pria Slimfit Stretch Premium - Hitam</h3>
-      <p class="meta"><strong>Bahan:</strong> Cotton Twill Stretch Suede Имpor (Tebal, Lembut & Melar)</p>
-      <p class="meta"><strong>Pilihan Warna:</strong> Hitam, Cream, Abu Tua, Mocca, Navy</p>
-      <p class="meta"><strong>Ukuran Tersedia:</strong> 28, 30, 32, 34, 36, 38</p>
-      <p class="meta"><strong>Stok Gudang:</strong> 145 pcs siap kirim (SPX / J&T)</p>
-    </div>
-    <div style="margin-top:16px; border-top:1px solid #f1f5f9; padding-top:12px;">
-      <div class="price">Rp 129.000 <span class="old-price">Rp 185.000</span></div>
-      <a href="https://shopee.co.id/" target="_blank" rel="noopener" class="btn" style="width:100%; text-align:center; margin-top:8px;">Beli di Shopee Official Meroket</a>
-    </div>
-  </div>
 
-  <div class="card">
-    <div>
-      <span class="badge">Celana Cargo | SKU: MRK-CARGO-OLV-L</span>
-      <h3 style="font-size:1.12rem; margin-bottom:8px; color:#0f172a;">Celana Cargo Panjang Pria Tactical Ripstop / Twill - Olive Army</h3>
-      <p class="meta"><strong>Bahan:</strong> Cotton Twill Heavy Duty 6 Saku Fungsional</p>
-      <p class="meta"><strong>Pilihan Warna:</strong> Olive Army, Hitam, Khaki, Abu Muda</p>
-      <p class="meta"><strong>Ukuran Tersedia:</strong> 28, 30, 32, 34, 36</p>
-      <p class="meta"><strong>Stok Gudang:</strong> 98 pcs siap kirim (SPX / J&T)</p>
-    </div>
-    <div style="margin-top:16px; border-top:1px solid #f1f5f9; padding-top:12px;">
-      <div class="price">Rp 139.000 <span class="old-price">Rp 199.000</span></div>
-      <a href="https://shopee.co.id/" target="_blank" rel="noopener" class="btn" style="width:100%; text-align:center; margin-top:8px;">Beli di Shopee Official Meroket</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div>
-      <span class="badge">Kaos Polos | SKU: MRK-KAOS-NVY-XL</span>
-      <h3 style="font-size:1.12rem; margin-bottom:8px; color:#0f172a;">Kaos Polos Oversize / Regular Cotton Combed 24s Knitto - Navy</h3>
-      <p class="meta"><strong>Bahan:</strong> 100% Pure Cotton Combed 24s (Adem & Menyerap Keringat)</p>
-      <p class="meta"><strong>Pilihan Warna:</strong> Navy, Hitam, Putih Solid, Maroon, Sage Green</p>
-      <p class="meta"><strong>Ukuran Tersedia:</strong> S, M, L, XL, XXL</p>
-      <p class="meta"><strong>Stok Gudang:</strong> 310 pcs siap kirim (SPX / J&T)</p>
-    </div>
-    <div style="margin-top:16px; border-top:1px solid #f1f5f9; padding-top:12px;">
-      <div class="price">Rp 59.000 <span class="old-price">Rp 89.000</span></div>
-      <a href="https://shopee.co.id/" target="_blank" rel="noopener" class="btn" style="width:100%; text-align:center; margin-top:8px;">Beli di Shopee Official Meroket</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div>
-      <span class="badge">Celana Jeans | SKU: MRK-JEANS-BLU-32</span>
-      <h3 style="font-size:1.12rem; margin-bottom:8px; color:#0f172a;">Celana Jeans Pria Denim 13 Oz Regular / Slim Straight - Bio Wash</h3>
-      <p class="meta"><strong>Bahan:</strong> Denim 13 Oz Non-Fade Jahitan Rantai Standar Distro</p>
-      <p class="meta"><strong>Pilihan Warna:</strong> Bio Wash, Bio Blitz, Garment Black</p>
-      <p class="meta"><strong>Ukuran Tersedia:</strong> 28, 29, 30, 31, 32, 33, 34</p>
-      <p class="meta"><strong>Stok Gudang:</strong> 84 pcs siap kirim (SPX / J&T)</p>
-    </div>
-    <div style="margin-top:16px; border-top:1px solid #f1f5f9; padding-top:12px;">
-      <div class="price">Rp 155.000 <span class="old-price">Rp 225.000</span></div>
-      <a href="https://shopee.co.id/" target="_blank" rel="noopener" class="btn" style="width:100%; text-align:center; margin-top:8px;">Beli di Shopee Official Meroket</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div>
-      <span class="badge">Kemeja Pria | SKU: MRK-KMJ-OXF-L</span>
-      <h3 style="font-size:1.12rem; margin-bottom:8px; color:#0f172a;">Kemeja Pria Lengan Pendek & Panjang Oxford Premium - Putih / Navy</h3>
-      <p class="meta"><strong>Bahan:</strong> Cotton Oxford Pique Lembut Anti Kusut</p>
-      <p class="meta"><strong>Pilihan Warna:</strong> Putih, Navy, Biru Muda, Hitam</p>
-      <p class="meta"><strong>Ukuran Tersedia:</strong> M, L, XL, XXL</p>
-      <p class="meta"><strong>Stok Gudang:</strong> 120 pcs siap kirim (SPX / J&T)</p>
-    </div>
-    <div style="margin-top:16px; border-top:1px solid #f1f5f9; padding-top:12px;">
-      <div class="price">Rp 115.000 <span class="old-price">Rp 165.000</span></div>
-      <a href="https://shopee.co.id/" target="_blank" rel="noopener" class="btn" style="width:100%; text-align:center; margin-top:8px;">Beli di Shopee Official Meroket</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div>
-      <span class="badge">Celana Pendek | SKU: MRK-SHORT-CHINO-32</span>
-      <h3 style="font-size:1.12rem; margin-bottom:8px; color:#0f172a;">Celana Pendek Chino Pria Santai Di Atas Lutut - Mocca</h3>
-      <p class="meta"><strong>Bahan:</strong> Cotton Twill Combed Stretch Nyaman Harian</p>
-      <p class="meta"><strong>Pilihan Warna:</strong> Mocca, Hitam, Abu Tua, Cream</p>
-      <p class="meta"><strong>Ukuran Tersedia:</strong> 28, 30, 32, 34, 36</p>
-      <p class="meta"><strong>Stok Gudang:</strong> 210 pcs siap kirim (SPX / J&T)</p>
-    </div>
-    <div style="margin-top:16px; border-top:1px solid #f1f5f9; padding-top:12px;">
-      <div class="price">Rp 85.000 <span class="old-price">Rp 125.000</span></div>
-      <a href="https://shopee.co.id/" target="_blank" rel="noopener" class="btn" style="width:100%; text-align:center; margin-top:8px;">Beli di Shopee Official Meroket</a>
-    </div>
-  </div>
-</div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div class="footer-grid">
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- 1. GERBANG LOGIN MULTI-ROLE TERISOLASI (FITUR 1 & 8)                    -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div id="login-screen">
+    <div class="login-wrap">
+      <div class="login-hero">
         <div>
-          <h4>MEROKET OFFICIAL APPAREL</h4>
-          <p>Produsen & Retail Pakaian Fisik Pria dan Wanita: Celana Chino, Cargo, Jeans Denim, Kaos Combed, dan Kemeja Harian dengan Standar QC Garment Terbaik.</p>
+          <div class="brand-logo">MEROKET <span>CRM & ERP</span></div>
+          <p style="color:var(--muted); font-size:0.86rem; margin-top:6px;">
+            Sistem Kendali Multi-Toko Shopee Pakaian Fisik (Chino, Cargo, Jeans 13 Oz, Kaos Combed & Kemeja)
+          </p>
+
+          <div style="margin-top:24px;">
+            <div style="font-size:0.78rem; font-weight:800; color:var(--brand); text-transform:uppercase; margin-bottom:8px;">
+              Arsitektur Isolasi Mandiri (Tahap 1 — Fitur 1 s/d 8)
+            </div>
+            <div style="background:rgba(15,23,42,0.75); border:1px solid var(--border); border-radius:10px; padding:14px; font-size:0.83rem; color:var(--text-sub);">
+              <p style="margin-bottom:8px;"><strong>1. Portal Bos (Pak Hamdan & Muhari):</strong> Kendali penuh Multi-Toko Shopee, HPP Konveksi, Laba Bersih Riil, Rekonsiliasi Escrow, Manajemen Staf, & Saklar Master.</p>
+              <p style="margin-bottom:8px;"><strong>2. Portal Karyawan Terisolasi:</strong> Staf Gudang, CS, dan Operasional bekerja pada antrean resi thermal 100x150 mm, rak gudang, dan chat ukuran <strong>tanpa bisa melihat HPP modal maupun laba bersih Bos</strong> (disensor mutlak di level Backend API).</p>
+              <p><strong>3. Ekspedisi Fisik Resmi:</strong> 100% SPX Express & J&T Express.</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <h4>Navigasi Resmi</h4>
-          <a href="/katalog">Katalog Produk</a>
-          <a href="/tentang-kami">Tentang Kami & Gudang</a>
-          <a href="/kontak">Kontak & Layanan Pelanggan</a>
-        </div>
-        <div>
-          <h4>Legal & Kebijakan</h4>
-          <a href="/kebijakan-privasi">Kebijakan Privasi Data</a>
-          <a href="/syarat-layanan">Syarat Layanan & Garansi Tukar Ukuran</a>
-          <p style="margin-top:8px;">Pengiriman Fisik Resmi: SPX Express & J&T Express</p>
+
+        <div style="margin-top:24px; padding-top:16px; border-top:1px solid var(--border); font-size:0.8rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <span>Status API Server Port 8090: <strong id="login-srv-badge" style="color:var(--warn);">Memeriksa...</strong></span>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="toggleApiEndpointModal()">Atur Endpoint Tunnel</button>
+          </div>
+          <div id="api-endpoint-cfg" style="display:none; margin-top:10px; background:var(--bg); padding:10px; border-radius:8px; border:1px solid var(--border);">
+            <label style="font-size:0.75rem; color:var(--muted); display:block; margin-bottom:4px;">URL API Backend (Localhost / Cloudflare Quick Tunnel):</label>
+            <div style="display:flex; gap:6px;">
+              <input type="text" id="custom-api-url" class="input" style="padding:6px 10px; font-size:0.8rem;" placeholder="https://....trycloudflare.com">
+              <button type="button" class="btn btn-sm" onclick="saveCustomApiUrl()">Simpan</button>
+            </div>
+          </div>
+          <div style="margin-top:10px; display:flex; gap:14px; font-size:0.78rem;">
+            <a href="/katalog">Lihat Katalog Publik</a>
+            <a href="/tentang-kami">Profil Gudang</a>
+            <a href="/kebijakan-privasi">Kebijakan Privasi</a>
+          </div>
         </div>
       </div>
-      <div style="border-top:1px solid #334155; padding-top:20px; text-align:center;">
-        &copy; 2026 Brand Meroket Official Apparel Indonesia. Seluruh Hak Cipta Dilindungi.
+
+      <div class="login-form-box">
+        <h2 style="font-size:1.3rem; font-weight:800; margin-bottom:4px;">Masuk ke Dashboard Meroket</h2>
+        <p style="font-size:0.84rem; color:var(--muted); margin-bottom:18px;">Pilih jalur portal Anda di bawah ini:</p>
+
+        <div class="portal-pills">
+          <button type="button" id="pill-bos" class="portal-pill active" onclick="selectPortalMode('BOS')">
+            <strong>PORTAL BOS / OWNER</strong>
+            <small>Pak Hamdan & Muhari (Full HPP & Laba)</small>
+          </button>
+          <button type="button" id="pill-staff" class="portal-pill" onclick="selectPortalMode('KARYAWAN')">
+            <strong>PORTAL KARYAWAN</strong>
+            <small>Gudang, Resi, CS & Operasional</small>
+          </button>
+        </div>
+
+        <form onsubmit="handleLoginSubmit(event)">
+          <div class="field">
+            <label>Username Akun</label>
+            <input type="text" id="login-username" class="input" placeholder="Masukkan username..." required autocomplete="username">
+          </div>
+          <div class="field">
+            <label>Kata Sandi</label>
+            <input type="password" id="login-password" class="input" placeholder="Masukkan kata sandi..." required autocomplete="current-password">
+          </div>
+          <div id="login-error-msg" style="display:none; background:var(--danger-soft); border:1px solid var(--danger); color:#fca5a5; padding:10px 12px; border-radius:8px; font-size:0.82rem; margin-bottom:12px;"></div>
+          <button type="submit" id="login-submit-btn" class="btn" style="width:100%; padding:12px;">
+            Masuk ke Sistem CRM & ERP
+          </button>
+        </form>
+
+        <div class="quick-accounts">
+          <div style="font-size:0.76rem; font-weight:700; color:var(--muted); text-transform:uppercase;">
+            Simulasi Cepat Uji Isolasi Role (Klik untuk Isi Otomatis):
+          </div>
+          <div class="quick-grid">
+            <button type="button" class="quick-btn" onclick="quickFillLogin('hamdan', 'MeroketBos2026!', 'BOS')">
+              <strong>Pak Hamdan (BOS)</strong>
+              <span>Owner — Full HPP, Laba & Multi-Toko</span>
+            </button>
+            <button type="button" class="quick-btn" onclick="quickFillLogin('muhari', 'MeroketArch2026!', 'BOS')">
+              <strong>Muhari (BOS)</strong>
+              <span>System Architect — Full Control</span>
+            </button>
+            <button type="button" class="quick-btn" onclick="quickFillLogin('gudang01', 'GudangMeroket2026!', 'KARYAWAN')">
+              <strong>Rizky (ADMIN GUDANG)</strong>
+              <span>Resi Thermal & Rak (Tanpa HPP)</span>
+            </button>
+            <button type="button" class="quick-btn" onclick="quickFillLogin('cs01', 'CsMeroket2026!', 'KARYAWAN')">
+              <strong>Nadia (ADMIN CS)</strong>
+              <span>Chat AI & Ukuran (Tanpa HPP)</span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
-  </footer>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- 2. APLIKASI DASHBOARD CRM & ERP MULTI-TOKO (FITUR 1 s/d 8)              -->
+  <!-- ═══════════════════════════════════════════════════════════════════════ -->
+  <div id="app-screen">
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="brand-logo" style="font-size:1.2rem;">MEROKET <span>CRM & ERP</span></div>
+
+        <!-- FITUR 6: MULTI-STORE SWITCHER (GABUNGAN SEMUA TOKO VS PER TOKO) -->
+        <div class="store-switcher" title="Fitur 6: Multi-Store Switcher (Mode Gabungan vs Per Toko)">
+          <label for="global-shop-filter">Toko Aktif:</label>
+          <select id="global-shop-filter" onchange="handleShopFilterChange()">
+            <option value="ALL">SEMUA TOKO SHOPEE (GABUNGAN)</option>
+          </select>
+        </div>
+
+        <span id="top-role-badge" class="badge badge-boss">PORTAL BOS</span>
+      </div>
+
+      <div class="topbar-right">
+        <span id="top-ram-pill" class="badge badge-ok">RAM: -- MB</span>
+        <span id="top-switch-pill" class="badge badge-warn">SAKLAR PRODUKSI: SAFE MODE</span>
+        <span id="top-user-name" style="font-size:0.85rem; font-weight:700; color:var(--text-sub);"></span>
+        <button type="button" class="btn btn-secondary btn-sm" onclick="refreshAllData()">Muat Ulang Data</button>
+        <button type="button" class="btn btn-danger btn-sm" onclick="handleLogout()">Keluar</button>
+      </div>
+    </header>
+
+    <main class="main-container">
+      <!-- Banner Status Isolasi Role (Fitur 1 & 2) -->
+      <div id="role-isolation-banner" class="isolation-banner isolation-boss">
+        <div>
+          <strong id="isolation-title" style="font-size:0.95rem; display:block;">Mode Portal Bos Aktif (Akses Penuh)</strong>
+          <span id="isolation-desc" style="font-size:0.82rem; color:var(--text-sub);">
+            Anda memiliki akses penuh ke Kalkulasi HPP Konveksi, Laba Bersih Riil, Rekonsiliasi Escrow, Manajemen Staf, dan Registri Multi-Toko Shopee.
+          </span>
+        </div>
+        <div id="staff-security-test-box" style="display:none;">
+          <button type="button" class="btn btn-secondary btn-sm" onclick="testUnauthorizedBossAccess()">
+            Uji Keamanan: Coba Akses Endpoint Bos (Bukti Blokir 403)
+          </button>
+        </div>
+      </div>
+
+      <!-- Navigasi Tab Tahap 1 -->
+      <div class="nav-tabs">
+        <button type="button" class="nav-tab active" onclick="switchMainTab('tab-overview', this)">
+          1. Overview & Isolasi Data (Fitur 1, 2 & 6)
+        </button>
+        <button type="button" class="nav-tab" onclick="switchMainTab('tab-shops', this)">
+          2. Multi-Toko Shopee & OAuth Token (Fitur 5 & 7)
+        </button>
+        <button type="button" id="tab-btn-staff" class="nav-tab" onclick="switchMainTab('tab-staff', this)">
+          3. Manajemen Akun Staf & Role (Fitur 3 - Khusus Bos)
+        </button>
+        <button type="button" class="nav-tab" onclick="switchMainTab('tab-audit', this)">
+          4. Audit Log Aktivitas Karyawan (Fitur 4)
+        </button>
+        <button type="button" class="nav-tab" onclick="switchMainTab('tab-health', this)">
+          5. Kesehatan Server Port 8090 & Peta 56 Fitur (Fitur 8)
+        </button>
+      </div>
+
+      <!-- ── TAB 1: OVERVIEW OPERASIONAL & FINANSIAL TERISOLASI ────────────── -->
+      <section id="tab-overview" class="tab-pane active">
+        <div style="margin-bottom:8px; font-size:0.8rem; font-weight:800; color:var(--muted); text-transform:uppercase;">
+          Metrik Operasional Gudang & Pengiriman Fisik (Tampil untuk Bos & Karyawan)
+        </div>
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-label">Toko Shopee Terhubung</div>
+            <div class="metric-val" id="m-total-shops">0 Toko</div>
+            <div class="metric-sub" id="m-active-shops-sub">Mode Multi-Toko Aktif</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Total Stok Fisik Gudang</div>
+            <div class="metric-val" id="m-total-stock">0 pcs</div>
+            <div class="metric-sub" id="m-total-sku-sub">0 Master SKU Pakaian</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Antrean Siap Kirim (SPX & J&T)</div>
+            <div class="metric-val" id="m-ready-ship" style="color:var(--warn);">0 Order</div>
+            <div class="metric-sub">Menunggu Cetak Resi Thermal 100x150</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-label">Resi Thermal Tercetak</div>
+            <div class="metric-val" id="m-printed-orders" style="color:var(--ok);">0 Order</div>
+            <div class="metric-sub">Tercatat Anti-Cetak Ganda</div>
+          </div>
+        </div>
+
+        <!-- Baris Metrik Rahasia Bos (Fitur 2: Disembunyikan & Disensor dari JSON Karyawan) -->
+        <div id="boss-finance-section" style="display:none;">
+          <div style="margin-bottom:8px; font-size:0.8rem; font-weight:800; color:#fb923c; text-transform:uppercase;">
+            Metrik Rahasia Portal Bos — HPP Konveksi, Dana Cair Escrow & Laba Bersih Riil (Disensor Mutlak dari Karyawan)
+          </div>
+          <div class="metrics-grid">
+            <div class="metric-card boss-secret">
+              <div class="metric-label">Total Nilai Aset HPP Gudang</div>
+              <div class="metric-val" id="m-asset-hpp">Rp 0</div>
+              <div class="metric-sub">Modal Fisik Stok Pakaian di Rak</div>
+            </div>
+            <div class="metric-card boss-secret">
+              <div class="metric-label">Omzet Kotor vs Dana Cair Escrow</div>
+              <div class="metric-val" id="m-escrow-net">Rp 0</div>
+              <div class="metric-sub" id="m-gross-sales-sub">Omzet Kotor: Rp 0</div>
+            </div>
+            <div class="metric-card boss-secret">
+              <div class="metric-label">Total Modal HPP Pesanan</div>
+              <div class="metric-val" id="m-order-hpp">Rp 0</div>
+              <div class="metric-sub" id="m-shopee-fee-sub">Potongan Admin Shopee: Rp 0</div>
+            </div>
+            <div class="metric-card boss-secret">
+              <div class="metric-label">Laba Bersih Riil (Net Profit)</div>
+              <div class="metric-val" id="m-net-profit" style="color:var(--ok);">Rp 0</div>
+              <div class="metric-sub" id="m-margin-pct-sub">Rata-rata Margin Bersih: 0%</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabel Pesanan Multi-Toko -->
+        <div class="panel-box">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Daftar Pesanan Pakaian Fisik Lintas Toko Shopee (SPX Express & J&T Express)</div>
+              <div class="panel-sub" id="order-table-sub">Menampilkan pesanan sesuai filter Multi-Store Switcher di atas.</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead id="orders-thead"></thead>
+              <tbody id="orders-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tabel Master SKU Gudang -->
+        <div class="panel-box">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Master SKU Gudang Pakaian Fisik (SSOT Lintas Toko)</div>
+              <div class="panel-sub">Kolom HPP Modal & Nilai Aset otomatis dihapus oleh server jika diakses dari Portal Karyawan.</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead id="skus-thead"></thead>
+              <tbody id="skus-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── TAB 2: REGISTRI MULTI-TOKO SHOPEE & OAUTH TOKEN (FITUR 5 & 7) ──── -->
+      <section id="tab-shops" class="tab-pane">
+        <div class="panel-box">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Registri Multi-Akun Toko Shopee Pakaian Fisik & Monitor Token OAuth2 (Fitur 5 & 7)</div>
+              <div class="panel-sub">Kelola seluruh cabang toko Shopee milik Pak Hamdan, pantau masa aktif Access Token (4 jam), dan jalankan Auto-Refresh.</div>
+            </div>
+            <div id="shops-boss-actions" style="display:flex; gap:8px; flex-wrap:wrap;">
+              <button type="button" class="btn btn-ok btn-sm" onclick="refreshAllShopTokens()">
+                Auto-Refresh Semua Token Toko (+4 Jam)
+              </button>
+              <button type="button" class="btn btn-sm" onclick="generateShopeeOAuthLink()">
+                Hubungkan Toko via OAuth2 Shopee Resmi
+              </button>
+            </div>
+          </div>
+
+          <div id="oauth-link-result" style="display:none; background:var(--bg); border:1px solid var(--brand); padding:14px; border-radius:10px; margin-bottom:16px;">
+            <div style="font-size:0.82rem; font-weight:700; color:#fb923c; margin-bottom:6px;">
+              Tautan Otorisasi Resmi Shopee Open Platform v2 (HMAC-SHA256 Signed):
+            </div>
+            <div id="oauth-url-text" style="font-family:monospace; font-size:0.78rem; word-break:break-all; color:var(--text-sub); margin-bottom:10px;"></div>
+            <a id="oauth-open-link" href="#" target="_blank" rel="noopener" class="btn btn-sm">Buka Halaman Otorisasi Shopee</a>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Shop ID & Kode</th>
+                  <th>Nama Toko Shopee</th>
+                  <th>Fokus Kategori Pakaian</th>
+                  <th>Ekspedisi Fisik</th>
+                  <th>Sisa Masa Aktif Token</th>
+                  <th>Refresh Terakhir</th>
+                  <th>Status</th>
+                  <th>Aksi</th>
+                </tr>
+              </thead>
+              <tbody id="shops-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Form Tambah Toko Baru (Khusus Bos) -->
+        <div id="add-shop-panel" class="panel-box">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Tambah / Daftarkan Akun Toko Shopee Baru ke Sistem Meroket</div>
+              <div class="panel-sub">Daftarkan toko Shopee pakaian fisik baru untuk diikutsertakan dalam sinkronisasi stok, Auto-Push 4 jam, dan Cetak Resi Thermal.</div>
+            </div>
+          </div>
+          <form onsubmit="handleAddShopSubmit(event)">
+            <div class="form-grid">
+              <div class="field">
+                <label>Shop ID Shopee (Opsional / Auto)</label>
+                <input type="number" id="new-shop-id" class="input" placeholder="Contoh: 10880104">
+              </div>
+              <div class="field">
+                <label>Kode Singkat Toko</label>
+                <input type="text" id="new-shop-code" class="input" placeholder="Contoh: MRK-CARGO" required>
+              </div>
+              <div class="field">
+                <label>Nama Lengkap Toko Shopee</label>
+                <input type="text" id="new-shop-name" class="input" placeholder="Contoh: Meroket Cargo & Tactical Store" required>
+              </div>
+              <div class="field">
+                <label>Fokus Produk Pakaian</label>
+                <input type="text" id="new-shop-focus" class="input" value="Celana Chino, Cargo, Jeans & Kaos" required>
+              </div>
+              <div class="field">
+                <label>Ekspedisi Aktif</label>
+                <input type="text" id="new-shop-couriers" class="input" value="SPX Express, J&T Express" required>
+              </div>
+              <div class="field">
+                <label>Lokasi Rak / Alamat Pickup Gudang</label>
+                <input type="text" id="new-shop-pickup" class="input" value="Gudang Utama Meroket Apparel" required>
+              </div>
+            </div>
+            <button type="submit" class="btn">Daftarkan Toko ke Multi-Store Engine</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ── TAB 3: MANAJEMEN AKUN STAF & HAK AKSES (FITUR 3 - KHUSUS BOS) ─── -->
+      <section id="tab-staff" class="tab-pane">
+        <div class="panel-box">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Manajemen Akun Karyawan & Isolasi Hak Akses Role (Fitur 3 — Khusus Portal Bos)</div>
+              <div class="panel-sub">Kelola akun staf Gudang, CS, dan Operasional. Setiap akun staf terisolasi secara otomatis dari data HPP dan Laba Bersih.</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Username</th>
+                  <th>Nama Lengkap</th>
+                  <th>Role / Portal</th>
+                  <th>Akses Data HPP & Laba</th>
+                  <th>Penugasan Toko</th>
+                  <th>Sesi Aktif</th>
+                  <th>Status Akun</th>
+                  <th>Kendali Bos</th>
+                </tr>
+              </thead>
+              <tbody id="staff-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="panel-box">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Buat Akun Karyawan Baru</div>
+              <div class="panel-sub">Tambahkan akun staf baru sesuai pembagian tugas operasional gudang dan toko Shopee.</div>
+            </div>
+          </div>
+          <form onsubmit="handleAddStaffSubmit(event)">
+            <div class="form-grid">
+              <div class="field">
+                <label>Username Login Staf</label>
+                <input type="text" id="staff-username" class="input" placeholder="Contoh: gudang02" required>
+              </div>
+              <div class="field">
+                <label>Kata Sandi Awal</label>
+                <input type="text" id="staff-password" class="input" placeholder="Minimal 6 karakter" required>
+              </div>
+              <div class="field">
+                <label>Nama Lengkap & Jabatan</label>
+                <input type="text" id="staff-fullname" class="input" placeholder="Contoh: Fajar - Staf Packing Gudang" required>
+              </div>
+              <div class="field">
+                <label>Role Operasional</label>
+                <select id="staff-role" class="input">
+                  <option value="ADMIN_GUDANG">ADMIN_GUDANG — Cetak Resi Thermal & Rak Gudang (Tanpa HPP)</option>
+                  <option value="ADMIN_CS">ADMIN_CS — Chat AI CS & Panduan Ukuran (Tanpa HPP)</option>
+                  <option value="STAFF_OPERASIONAL">STAFF_OPERASIONAL — Katalog SSOT & Promo (Tanpa HPP)</option>
+                  <option value="BOS">BOS — Co-Owner / Akses Penuh</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn">Tambah Akun Staf Baru</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- ── TAB 4: AUDIT LOG AKTIVITAS KARYAWAN REAL-TIME (FITUR 4) ────────── -->
+      <section id="tab-audit" class="tab-pane">
+        <div class="panel-box">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Audit Log Aktivitas Karyawan & Keamanan Sistem Real-Time (Fitur 4)</div>
+              <div class="panel-sub">Mencatat seluruh jejak login, aksi operasional staf, pembaruan token toko, hingga blokir otomatis jika karyawan mencoba mengakses menu Bos.</div>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <select id="audit-role-filter" class="input" style="width:auto; padding:7px 12px;" onchange="loadAuditLogs()">
+                <option value="ALL">Semua Role</option>
+                <option value="BOS">BOS</option>
+                <option value="ADMIN_GUDANG">ADMIN_GUDANG</option>
+                <option value="ADMIN_CS">ADMIN_CS</option>
+                <option value="STAFF_OPERASIONAL">STAFF_OPERASIONAL</option>
+              </select>
+              <input type="text" id="audit-search-q" class="input" style="width:220px; padding:7px 12px;" placeholder="Cari aksi / username..." onkeyup="if(event.key==='Enter') loadAuditLogs()">
+              <button type="button" class="btn btn-secondary btn-sm" onclick="loadAuditLogs()">Filter Log</button>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Waktu (UTC/WIB)</th>
+                  <th>Username</th>
+                  <th>Role</th>
+                  <th>Toko</th>
+                  <th>Modul & Kode Aksi</th>
+                  <th>Rincian Aktivitas</th>
+                  <th>IP Address</th>
+                </tr>
+              </thead>
+              <tbody id="audit-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── TAB 5: KESEHATAN SERVER PORT 8090 & PETA 7 TAHAP (FITUR 8) ─────── -->
+      <section id="tab-health" class="tab-pane">
+        <div class="panel-box">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Monitor Kesehatan Server Lokal Port 8090, SQLite WAL & Jembatan Tunnel (Fitur 8)</div>
+              <div class="panel-sub">Status real-time mesin FokusKonten Zero-Budget Server di PC Lokal Meroket.</div>
+            </div>
+          </div>
+          <div id="health-cards-grid" class="metrics-grid"></div>
+        </div>
+
+        <div class="panel-box">
+          <div class="panel-header">
+            <div>
+              <div class="panel-title">Peta Jalan Pembangunan 7 Tahap (56 Fitur) CRM & ERP Meroket</div>
+              <div class="panel-sub">Pembangunan dilakukan bertahap (step-by-step) untuk memastikan kesempurnaan UX, UI, dan ketahanan logika bisnis.</div>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Tahap</th>
+                  <th>Cakupan Modul & Fitur</th>
+                  <th>Jumlah Fitur</th>
+                  <th>Status Implementasi</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Tahap 1</strong></td>
+                  <td>Fondasi UI/UX CRM, Login & Isolasi Mandiri Bos vs Karyawan, Audit Log, Registri Multi-Toko Shopee, Multi-Store Switcher, Auto-Refresh Token OAuth & Health Monitor</td>
+                  <td>Fitur 1 – 8</td>
+                  <td><span class="badge badge-ok">AKTIF & TERUJI 100%</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Tahap 2</strong></td>
+                  <td>Katalog SSOT Produk Pakaian, Auto-Clone Lintas Toko, Matriks Ukuran S-XXL/28-38, Potong Stok Otomatis, Bulk Editor, Low Stock Alert, Rack Location & CSV/CXP</td>
+                  <td>Fitur 9 – 16</td>
+                  <td><span class="badge badge-warn">SIAP DIEKSEKUSI BERIKUTNYA</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Tahap 3</strong></td>
+                  <td>Otomasi Promosi — Auto-Push/Boost 4 Jam (5 Slot/Toko), Auto-Rolling Voucher, Voucher Guard Anti-Bocor di Bawah HPP, Diskon Coret & Bundle Deal</td>
+                  <td>Fitur 17 – 24</td>
+                  <td><span class="badge badge-staff">TERJADWAL</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Tahap 4</strong></td>
+                  <td>Auto-Cetak Resi Thermal 100x150 mm via SumatraPDF, Auto-Arrange Shipment SPX & J&T, Anti-Cetak Ganda, Picking List Rak & Scan Barcode Gudang</td>
+                  <td>Fitur 25 – 32</td>
+                  <td><span class="badge badge-staff">TERJADWAL</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Tahap 5</strong></td>
+                  <td>Auto-Chat Gemini AI CS 24/7, Kalkulator Rekomendasi Ukuran (Tinggi/Berat Badan), Filter Eskalasi Komplain, Auto-Follow Up & Editor fashion_knowledge.json</td>
+                  <td>Fitur 33 – 40</td>
+                  <td><span class="badge badge-staff">TERJADWAL</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Tahap 6</strong></td>
+                  <td>Khusus Bos — Kalkulator Auto-HPP Konveksi (Kain+Jahit+Aksesoris+Packing), Rekonsiliasi Dana Cair Escrow Shopee, Kalkulasi Laba Bersih Riil & Deteksi Bocor Margin</td>
+                  <td>Fitur 41 – 48</td>
+                  <td><span class="badge badge-staff">TERJADWAL</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Tahap 7</strong></td>
+                  <td>Analisis Penjualan Lintas Toko, Peringkat Produk Terlaris per Warna/Ukuran, Fast-Moving vs Deadstock, Proyeksi Restock Konveksi & Auto-Laporan Eksekutif</td>
+                  <td>Fitur 49 – 56</td>
+                  <td><span class="badge badge-staff">TERJADWAL</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast-box"></div>
+
   <script>
+    // ═══════════════════════════════════════════════════════════════════════════
+    // SMART API GATEWAY CONNECTOR (Otomatis Mendukung Localhost:8090 & GitHub Pages -> Quick Tunnel)
+    // ═══════════════════════════════════════════════════════════════════════════
+    let API_BASE = '';
+    let selectedPortalMode = 'BOS';
+    let currentToken = localStorage.getItem('meroket_crm_token') || '';
+    let currentUser = null;
+    let currentShopId = localStorage.getItem('meroket_crm_shop_id') || 'ALL';
+
+    function showToast(msg, type = 'ok') {
+      const box = document.getElementById('toast-box');
+      const el = document.createElement('div');
+      el.className = 'toast ' + type;
+      el.textContent = msg;
+      box.appendChild(el);
+      setTimeout(() => { el.remove(); }, 4200);
+    }
+
+    function formatRp(num) {
+      return 'Rp ' + Number(num || 0).toLocaleString('id-ID');
+    }
+
+    async function resolveApiBaseUrl() {
+      const savedCustom = localStorage.getItem('meroket_custom_api_url');
+      if (savedCustom) {
+        API_BASE = savedCustom.replace(/\/+$/, '');
+      } else if (location.hostname === '127.0.0.1' || location.hostname === 'localhost') {
+        API_BASE = 'http://' + location.hostname + ':8090';
+      } else {
+        try {
+          const cfgRes = await fetch('/content/api_config.json?t=' + Date.now());
+          if (cfgRes.ok) {
+            const cfg = await cfgRes.json();
+            if (cfg && cfg.apiBaseUrl) {
+              API_BASE = cfg.apiBaseUrl.replace(/\/+$/, '');
+            }
+          }
+        } catch (_) {}
+      }
+
+      const customInput = document.getElementById('custom-api-url');
+      if (customInput) customInput.value = API_BASE || 'http://127.0.0.1:8090';
+
+      // Cek koneksi ke /api/v1/health
+      const badge = document.getElementById('login-srv-badge');
+      try {
+        const res = await fetch(API_BASE + '/api/v1/health');
+        const data = await res.json();
+        if (data && data.status === 'UP') {
+          badge.textContent = 'ONLINE (' + data.memoryUsageRssMb + ' MB | WAL Mode)';
+          badge.style.color = 'var(--ok)';
+        } else {
+          badge.textContent = 'TERHUBUNG';
+          badge.style.color = 'var(--ok)';
+        }
+      } catch (err) {
+        badge.textContent = 'OFFLINE / Perlu Cek Endpoint Tunnel';
+        badge.style.color = 'var(--danger)';
+      }
+    }
+
+    function toggleApiEndpointModal() {
+      const box = document.getElementById('api-endpoint-cfg');
+      box.style.display = box.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function saveCustomApiUrl() {
+      const val = document.getElementById('custom-api-url').value.trim();
+      if (!val) {
+        localStorage.removeItem('meroket_custom_api_url');
+      } else {
+        localStorage.setItem('meroket_custom_api_url', val.replace(/\/+$/, ''));
+      }
+      resolveApiBaseUrl();
+      showToast('Endpoint API Backend diperbarui.', 'ok');
+    }
+
+    async function apiFetch(path, options = {}) {
+      const headers = Object.assign({ 'Content-Type': 'application/json' }, options.headers || {});
+      if (currentToken) {
+        headers['Authorization'] = 'Bearer ' + currentToken;
+      }
+      const response = await fetch(API_BASE + path, Object.assign({}, options, { headers }));
+      const data = await response.json().catch(() => ({ success: false, message: 'Respons bukan JSON valid' }));
+      return { status: response.status, ok: response.ok, data };
+    }
+
+    // ── LOGIKA LOGIN & ISOLASI PORTAL (FITUR 1) ───────────────────────────────
+    function selectPortalMode(mode) {
+      selectedPortalMode = mode;
+      document.getElementById('pill-bos').classList.toggle('active', mode === 'BOS');
+      document.getElementById('pill-staff').classList.toggle('active', mode === 'KARYAWAN');
+    }
+
+    function quickFillLogin(username, password, mode) {
+      selectPortalMode(mode);
+      document.getElementById('login-username').value = username;
+      document.getElementById('login-password').value = password;
+      document.getElementById('login-error-msg').style.display = 'none';
+    }
+
+    async function handleLoginSubmit(e) {
+      e.preventDefault();
+      const errBox = document.getElementById('login-error-msg');
+      errBox.style.display = 'none';
+      const username = document.getElementById('login-username').value.trim();
+      const password = document.getElementById('login-password').value;
+
+      try {
+        const { ok, data } = await apiFetch('/api/v1/crm/auth/login', {
+          method: 'POST',
+          body: JSON.stringify({ username, password, portalMode: selectedPortalMode })
+        });
+
+        if (!ok || !data.success) {
+          errBox.textContent = data.message || 'Gagal masuk ke sistem.';
+          errBox.style.display = 'block';
+          return;
+        }
+
+        currentToken = data.token;
+        currentUser = data.user;
+        localStorage.setItem('meroket_crm_token', currentToken);
+        showToast(data.message, 'ok');
+        enterDashboardApp();
+      } catch (err) {
+        errBox.textContent = 'Tidak dapat menghubungi API Server Port 8090: ' + err.message;
+        errBox.style.display = 'block';
+      }
+    }
+
+    async function handleLogout() {
+      try {
+        await apiFetch('/api/v1/crm/auth/logout', { method: 'POST' });
+      } catch (_) {}
+      currentToken = '';
+      currentUser = null;
+      localStorage.removeItem('meroket_crm_token');
+      document.getElementById('app-screen').style.display = 'none';
+      document.getElementById('login-screen').style.display = 'flex';
+      showToast('Anda telah keluar dari sesi CRM & ERP.', 'ok');
+    }
+
+    // ── INISIALISASI TAMPILAN DASHBOARD SESUAI ROLE BOS VS KARYAWAN (FITUR 2) ──
+    async function enterDashboardApp() {
+      document.getElementById('login-screen').style.display = 'none';
+      document.getElementById('app-screen').style.display = 'flex';
+
+      const isBoss = Boolean(currentUser && currentUser.isBoss);
+      const roleBadge = document.getElementById('top-role-badge');
+      roleBadge.textContent = currentUser.roleLabel;
+      roleBadge.className = 'badge ' + (isBoss ? 'badge-boss' : 'badge-staff');
+
+      document.getElementById('top-user-name').textContent = currentUser.fullName + ' (@' + currentUser.username + ')';
+
+      // Atur Banner Isolasi Role & visibilitas elemen khusus Bos
+      const banner = document.getElementById('role-isolation-banner');
+      const title = document.getElementById('isolation-title');
+      const desc = document.getElementById('isolation-desc');
+      const testBox = document.getElementById('staff-security-test-box');
+      const bossFinance = document.getElementById('boss-finance-section');
+      const staffTabBtn = document.getElementById('tab-btn-staff');
+      const addShopPanel = document.getElementById('add-shop-panel');
+      const shopsBossActions = document.getElementById('shops-boss-actions');
+
+      if (isBoss) {
+        banner.className = 'isolation-banner isolation-boss';
+        title.textContent = 'PORTAL BOS AKTIF — Akses Penuh Multi-Toko, HPP Konveksi & Laba Bersih Riil';
+        desc.textContent = 'Seluruh kalkulasi HPP, Dana Cair Escrow Shopee, Margin Laba Bersih, Manajemen Staf, dan Konfigurasi OAuth Toko ditampilkan secara penuh.';
+        testBox.style.display = 'none';
+        bossFinance.style.display = 'block';
+        staffTabBtn.classList.remove('locked');
+        addShopPanel.style.display = 'block';
+        shopsBossActions.style.display = 'flex';
+      } else {
+        banner.className = 'isolation-banner isolation-staff';
+        title.textContent = 'PORTAL KARYAWAN TERISOLASI (' + currentUser.role + ') — Proteksi Data HPP & Keuangan Aktif';
+        desc.textContent = 'Anda berada di lingkungan kerja operasional terisolasi. Data HPP Konveksi, Dana Cair Escrow, dan Laba Bersih Bos disensor mutlak oleh Server Backend.';
+        testBox.style.display = 'block';
+        bossFinance.style.display = 'none';
+        staffTabBtn.classList.add('locked');
+        addShopPanel.style.display = 'none';
+        shopsBossActions.style.display = 'none';
+      }
+
+      await refreshAllData();
+    }
+
+    function switchMainTab(tabId, btnEl) {
+      if (tabId === 'tab-staff' && (!currentUser || !currentUser.isBoss)) {
+        testUnauthorizedBossAccess();
+        return;
+      }
+      document.querySelectorAll('#app-screen .tab-pane').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('#app-screen .nav-tab').forEach(b => b.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      if (btnEl) btnEl.classList.add('active');
+
+      if (tabId === 'tab-staff' && currentUser && currentUser.isBoss) loadStaffList();
+      if (tabId === 'tab-audit') loadAuditLogs();
+      if (tabId === 'tab-health') loadSystemHealth();
+    }
+
+    function handleShopFilterChange() {
+      const sel = document.getElementById('global-shop-filter');
+      currentShopId = sel.value || 'ALL';
+      localStorage.setItem('meroket_crm_shop_id', currentShopId);
+      loadOverviewData();
+      showToast('Filter Multi-Store dialihkan ke: ' + sel.options[sel.selectedIndex].text, 'ok');
+    }
+
+    async function refreshAllData() {
+      await loadOverviewData();
+      if (currentUser && currentUser.isBoss) {
+        await loadStaffList();
+      }
+      await loadAuditLogs();
+      await loadSystemHealth();
+    }
+
+    // ── MUAT DATA OVERVIEW, MULTI-STORE SWITCHER, TABEL PESANAN & SKU ─────────
+    async function loadOverviewData() {
+      const { ok, status, data } = await apiFetch('/api/v1/crm/overview?shop_id=' + encodeURIComponent(currentShopId));
+      if (status === 401) {
+        handleLogout();
+        return;
+      }
+      if (!ok || !data.success) {
+        showToast(data.message || 'Gagal memuat ringkasan CRM', 'err');
+        return;
+      }
+
+      const isBoss = Boolean(data.isBoss);
+
+      // Update Topbar Pills
+      document.getElementById('top-ram-pill').textContent = 'RAM Node v26: ' + data.serverStatus.rssMb + ' MB';
+      document.getElementById('top-switch-pill').textContent = data.serverStatus.productionSwitch
+        ? 'SAKLAR PRODUKSI: LIVE'
+        : 'SAKLAR PRODUKSI: SAFE MODE (OFF)';
+
+      // Populate Multi-Store Switcher Dropdown (Fitur 6)
+      const shopSelect = document.getElementById('global-shop-filter');
+      const prevVal = currentShopId;
+      shopSelect.innerHTML = '<option value="ALL">SEMUA TOKO SHOPEE (GABUNGAN - ' + data.shops.length + ' TOKO)</option>';
+      data.shops.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = String(s.shop_id);
+        opt.textContent = s.shop_code + ' — ' + s.shop_name + ' (#' + s.shop_id + ')';
+        shopSelect.appendChild(opt);
+      });
+      if ([...shopSelect.options].some(o => o.value === String(prevVal))) {
+        shopSelect.value = String(prevVal);
+      } else {
+        shopSelect.value = 'ALL';
+        currentShopId = 'ALL';
+      }
+
+      // Update Kartu Operasional
+      const op = data.operationalSummary;
+      document.getElementById('m-total-shops').textContent = op.totalShops + ' Toko';
+      document.getElementById('m-active-shops-sub').textContent = op.activeShops + ' Toko Terhubung Aktif';
+      document.getElementById('m-total-stock').textContent = Number(op.totalWarehouseStock).toLocaleString('id-ID') + ' pcs';
+      document.getElementById('m-total-sku-sub').textContent = op.totalMasterSkus + ' Master SKU (' + op.lowStockCount + ' Stok Menipis)';
+      document.getElementById('m-ready-ship').textContent = op.readyToShipCount + ' Order';
+      document.getElementById('m-printed-orders').textContent = op.printedCount + ' Order';
+
+      // Update Kartu Rahasia Bos (Hanya jika data.financeSummary ada & isBoss === true)
+      if (isBoss && data.financeSummary) {
+        const fin = data.financeSummary;
+        document.getElementById('m-asset-hpp').textContent = formatRp(fin.totalInventoryAssetCost);
+        document.getElementById('m-escrow-net').textContent = formatRp(fin.totalEscrowNet);
+        document.getElementById('m-gross-sales-sub').textContent = 'Omzet Kotor: ' + formatRp(fin.grossSales);
+        document.getElementById('m-order-hpp').textContent = formatRp(fin.totalOrderHpp);
+        document.getElementById('m-shopee-fee-sub').textContent = 'Potongan Admin Shopee: ' + formatRp(fin.shopeeFeeDeducted);
+        document.getElementById('m-net-profit').textContent = formatRp(fin.totalNetProfit);
+        document.getElementById('m-margin-pct-sub').textContent = 'Rata-rata Margin Bersih: ' + fin.avgMarginPct + '%';
+      }
+
+      // Render Tabel Pesanan (Kolom berbeda antara Bos vs Karyawan)
+      const ordersThead = document.getElementById('orders-thead');
+      const ordersTbody = document.getElementById('orders-tbody');
+      if (isBoss) {
+        ordersThead.innerHTML = '<tr><th>No. Pesanan (SN)</th><th>Toko Shopee</th><th>Pembeli & Catatan</th><th>Kurir & AWB</th><th>Omzet Order</th><th>Dana Cair Escrow</th><th>Modal HPP</th><th>Laba Bersih Riil</th><th>Status Resi</th></tr>';
+        ordersTbody.innerHTML = data.orders.map(o => `
+          <tr>
+            <td><strong>${o.order_sn}</strong></td>
+            <td><span class="badge badge-staff">${o.shop_name}</span></td>
+            <td><strong>${o.buyer_username}</strong><br><small style="color:var(--muted);">${o.buyer_message || '-'}</small></td>
+            <td><strong>${o.shipping_carrier}</strong><br><small style="font-family:monospace;">${o.tracking_number || '-'}</small></td>
+            <td>${formatRp(o.total_amount)}</td>
+            <td>${formatRp(o.escrow_amount)}</td>
+            <td style="color:#fb923c;">${formatRp(o.total_hpp)}</td>
+            <td><strong style="color:var(--ok);">${formatRp(o.net_profit)} (${o.margin_pct}%)</strong></td>
+            <td>${o.is_printed ? '<span class="badge badge-ok">SUDAH CETAK</span>' : '<span class="badge badge-warn">SIAP CETAK 100x150</span>'}</td>
+          </tr>
+        `).join('');
+      } else {
+        ordersThead.innerHTML = '<tr><th>No. Pesanan (SN)</th><th>Toko Shopee</th><th>Pembeli & Catatan</th><th>Item Pakaian</th><th>Kurir & Nomor Resi (AWB)</th><th>Status Pengiriman</th><th>Status Resi Thermal</th></tr>';
+        ordersTbody.innerHTML = data.orders.map(o => {
+          const itemSummary = (o.items || []).map(i => `${i.name} (x${i.qty})`).join(', ');
+          return `
+            <tr>
+              <td><strong>${o.order_sn}</strong></td>
+              <td><span class="badge badge-staff">${o.shop_name}</span></td>
+              <td><strong>${o.buyer_username}</strong><br><small style="color:var(--muted);">${o.buyer_message || '-'}</small></td>
+              <td>${itemSummary}</td>
+              <td><strong>${o.shipping_carrier}</strong><br><small style="font-family:monospace;">${o.tracking_number || '-'}</small></td>
+              <td><span class="badge badge-info">${o.order_status}</span></td>
+              <td>${o.is_printed ? '<span class="badge badge-ok">TERCETAK</span>' : '<span class="badge badge-warn">BELUM CETAK</span>'}</td>
+            </tr>
+          `;
+        }).join('');
+      }
+
+      // Render Tabel Master SKU (Kolom HPP disensor untuk Karyawan)
+      const skusThead = document.getElementById('skus-thead');
+      const skusTbody = document.getElementById('skus-tbody');
+      if (isBoss) {
+        skusThead.innerHTML = '<tr><th>Master SKU</th><th>Nama Koleksi Pakaian</th><th>Warna</th><th>Ukuran</th><th>HPP Konveksi (Rahasia Bos)</th><th>Stok Fisik Gudang</th><th>Nilai Aset HPP</th><th>Lokasi Rak</th></tr>';
+        skusTbody.innerHTML = data.skus.map(s => `
+          <tr>
+            <td><strong>${s.master_sku}</strong></td>
+            <td>${s.product_group}</td>
+            <td>${s.color}</td>
+            <td><span class="badge badge-staff">${s.size_label}</span></td>
+            <td style="color:#fb923c; font-weight:700;">${formatRp(s.cost_price)}</td>
+            <td><strong>${s.warehouse_stock} pcs</strong></td>
+            <td style="color:var(--ok); font-weight:700;">${formatRp(s.inventory_Asset_value)}</td>
+            <td><code>${s.rack_location || '-'}</code></td>
+          </tr>
+        `).join('');
+      } else {
+        skusThead.innerHTML = '<tr><th>Master SKU</th><th>Nama Koleksi Pakaian</th><th>Warna</th><th>Ukuran</th><th>Stok Fisik Gudang</th><th>Batas Alert Stok</th><th>Lokasi Rak Gudang</th><th>Status Proteksi HPP</th></tr>';
+        skusTbody.innerHTML = data.skus.map(s => `
+          <tr>
+            <td><strong>${s.master_sku}</strong></td>
+            <td>${s.product_group}</td>
+            <td>${s.color}</td>
+            <td><span class="badge badge-staff">${s.size_label}</span></td>
+            <td><strong>${s.warehouse_stock} pcs</strong></td>
+            <td>${s.min_stock_alert} pcs</td>
+            <td><code>${s.rack_location || '-'}</code></td>
+            <td><span class="badge badge-warn">HPP DISENSOR SERVER</span></td>
+          </tr>
+        `).join('');
+      }
+
+      // Render Tabel Multi-Toko Shopee di Tab 2 (Fitur 5 & 7)
+      const shopsTbody = document.getElementById('shops-tbody');
+      shopsTbody.innerHTML = data.shops.map(s => `
+        <tr>
+          <td><strong>#${s.shop_id}</strong><br><small style="color:var(--brand); font-weight:700;">${s.shop_code}</small></td>
+          <td><strong>${s.shop_name}</strong><br><small style="color:var(--muted);">${s.pickup_address_text}</small></td>
+          <td>${s.category_focus}</td>
+          <td><span class="badge badge-ok">${s.couriers}</span></td>
+          <td>
+            <strong>Access: ${s.access_token_remaining_min} menit</strong><br>
+            <small style="color:var(--muted);">Refresh Token: ${s.refresh_token_remaining_days} hari</small>
+          </td>
+          <td><small>${s.last_token_refresh_at || '-'}</small></td>
+          <td><span class="badge ${s.status === 'CONNECTED' ? 'badge-ok' : 'badge-danger'}">${s.status}</span></td>
+          <td>
+            ${isBoss
+              ? `<button type="button" class="btn btn-secondary btn-sm" onclick="refreshSingleShopToken(${s.shop_id})">Refresh Token</button>`
+              : `<span style="color:var(--muted); font-size:0.78rem;">Hanya Lihat</span>`
+            }
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    // ── FITUR 2: SIMULASI UJI TEMBAK ENDPOINT BOS OLEH KARYAWAN (BUKTI BLOKIR 403) ──
+    async function testUnauthorizedBossAccess() {
+      const { status, data } = await apiFetch('/api/v1/crm/staff');
+      if (status === 403) {
+        showToast('BUKTI ISOLASI SERVER (HTTP 403): ' + data.message, 'err');
+        loadAuditLogs();
+      }
+    }
+
+    // ── FITUR 5 & 7: AKSI MULTI-TOKO & AUTO-REFRESH TOKEN OAUTH ───────────────
+    async function refreshSingleShopToken(shopId) {
+      const { ok, data } = await apiFetch('/api/v1/crm/shops/' + shopId + '/refresh-token', { method: 'POST' });
+      if (ok && data.success) {
+        showToast(data.message, 'ok');
+        loadOverviewData();
+        loadAuditLogs();
+      } else {
+        showToast(data.message || 'Gagal me-refresh token toko', 'err');
+      }
+    }
+
+    async function refreshAllShopTokens() {
+      const { ok, data } = await apiFetch('/api/v1/crm/shops/refresh-all-tokens', { method: 'POST' });
+      if (ok && data.success) {
+        showToast(data.message, 'ok');
+        loadOverviewData();
+        loadAuditLogs();
+      } else {
+        showToast(data.message || 'Gagal me-refresh semua token', 'err');
+      }
+    }
+
+    async function generateShopeeOAuthLink() {
+      const { ok, data } = await apiFetch('/api/v1/crm/shops/oauth-url');
+      if (ok && data.success) {
+        const box = document.getElementById('oauth-link-result');
+        document.getElementById('oauth-url-text').textContent = data.authUrl;
+        document.getElementById('oauth-open-link').href = data.authUrl;
+        box.style.display = 'block';
+        showToast('Tautan OAuth2 Shopee Partner v2 berhasil dibuat.', 'ok');
+      } else {
+        showToast(data.message || 'Gagal membuat tautan OAuth', 'err');
+      }
+    }
+
+    async function handleAddShopSubmit(e) {
+      e.preventDefault();
+      const payload = {
+        shop_id: document.getElementById('new-shop-id').value.trim(),
+        shop_code: document.getElementById('new-shop-code').value.trim(),
+        shop_name: document.getElementById('new-shop-name').value.trim(),
+        category_focus: document.getElementById('new-shop-focus').value.trim(),
+        couriers: document.getElementById('new-shop-couriers').value.trim(),
+        pickup_address_text: document.getElementById('new-shop-pickup').value.trim()
+      };
+      const { ok, data } = await apiFetch('/api/v1/crm/shops', {
+        method: 'POST',
+        body: JSON.stringify(payload)
+      });
+      if (ok && data.success) {
+        showToast(data.message, 'ok');
+        document.getElementById('new-shop-id').value = '';
+        document.getElementById('new-shop-code').value = '';
+        document.getElementById('new-shop-name').value = '';
+        loadOverviewData();
+        loadAuditLogs();
+      } else {
+        showToast(data.message || 'Gagal mendaftarkan toko baru', 'err');
+      }
+    }
+
+    // ── FITUR 3: MANAJEMEN AKUN STAF (KHUSUS BOS) ─────────────────────────────
+    async function loadStaffList() {
+      const { ok, data } = await apiFetch('/api/v1/crm/staff');
+      if (!ok || !data.success) return;
+      const tbody = document.getElementById('staff-tbody');
+      tbody.innerHTML = data.staff.map(u => `
+        <tr>
+          <td><strong>@${u.username}</strong></td>
+          <td>${u.full_name}</td>
+          <td><span class="badge ${u.role === 'BOS' ? 'badge-boss' : 'badge-staff'}">${u.role}</span></td>
+          <td>
+            ${u.can_view_hpp
+              ? '<span class="badge badge-ok">DIIZINKAN (BOS)</span>'
+              : '<span class="badge badge-danger">DIBLOKIR SERVER</span>'
+            }
+          </td>
+          <td><code>${(u.assigned_shops || ['ALL']).join(', ')}</code></td>
+          <td>${u.active_sessions} sesi</td>
+          <td>
+            <span class="badge ${u.is_active ? 'badge-ok' : 'badge-danger'}">
+              ${u.is_active ? 'AKTIF' : 'DIBEKUKAN'}
+            </span>
+          </td>
+          <td style="display:flex; gap:6px; flex-wrap:wrap;">
+            <button type="button" class="btn btn-secondary btn-sm" onclick="toggleStaffActive(${u.id}, ${!u.is_active})">
+              ${u.is_active ? 'Bekukan' : 'Aktifkan'}
+            </button>
+            <button type="button" class="btn btn-danger btn-sm" onclick="revokeStaffSessions(${u.id})">
+              Cabut Sesi
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    async function handleAddStaffSubmit(e) {
+      e.preventDefault();
+      const payload = {
+        username: document.getElementById('staff-username').value.trim(),
+        password: document.getElementById('staff-password').value,
+        full_name: document.getElementById('staff-fullname').value.trim(),
+        role: document.getElementById('staff-role').value,
+        assigned_shops: ['ALL']
+      };
+      const { ok, data } = await apiFetch('/api/v1/crm/staff', {
+        method: 'POST',
+        body: JSON.stringify(payload)
+      });
+      if (ok && data.success) {
+        showToast(data.message, 'ok');
+        document.getElementById('staff-username').value = '';
+        document.getElementById('staff-password').value = '';
+        document.getElementById('staff-fullname').value = '';
+        loadStaffList();
+        loadAuditLogs();
+      } else {
+        showToast(data.message || 'Gagal menambah staf', 'err');
+      }
+    }
+
+    async function toggleStaffActive(staffId, nextActive) {
+      const { ok, data } = await apiFetch('/api/v1/crm/staff/' + staffId, {
+        method: 'PUT',
+        body: JSON.stringify({ is_active: nextActive })
+      });
+      if (ok && data.success) {
+        showToast(data.message, 'ok');
+        loadStaffList();
+        loadAuditLogs();
+      } else {
+        showToast(data.message || 'Gagal mengubah status staf', 'err');
+      }
+    }
+
+    async function revokeStaffSessions(staffId) {
+      const { ok, data } = await apiFetch('/api/v1/crm/staff/' + staffId + '/revoke-sessions', {
+        method: 'POST'
+      });
+      if (ok && data.success) {
+        showToast(data.message, 'ok');
+        loadStaffList();
+        loadAuditLogs();
+      } else {
+        showToast(data.message || 'Gagal mencabut sesi', 'err');
+      }
+    }
+
+    // ── FITUR 4: AUDIT LOG AKTIVITAS KARYAWAN REAL-TIME ───────────────────────
+    async function loadAuditLogs() {
+      const role = document.getElementById('audit-role-filter').value;
+      const q = document.getElementById('audit-search-q').value.trim();
+      const { ok, data } = await apiFetch(`/api/v1/crm/audit-logs?role=${encodeURIComponent(role)}&q=${encodeURIComponent(q)}`);
+      if (!ok || !data.success) return;
+      const tbody = document.getElementById('audit-tbody');
+      tbody.innerHTML = data.logs.map(l => {
+        const isAlert = l.action.includes('BLOCKED') || l.action.includes('FAILED') || l.action.includes('REJECTED');
+        return `
+          <tr>
+            <td><small>${l.created_at}</small></td>
+            <td><strong>@${l.username}</strong></td>
+            <td><span class="badge ${l.role === 'BOS' ? 'badge-boss' : 'badge-staff'}">${l.role}</span></td>
+            <td><code>${l.shop_id || 'ALL'}</code></td>
+            <td><span class="badge ${isAlert ? 'badge-danger' : 'badge-ok'}">${l.action}</span></td>
+            <td>${l.detail || '-'}</td>
+            <td><code>${l.ip_address || '-'}</code></td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    // ── FITUR 8: MONITOR KESEHATAN SERVER PORT 8090 & QUICK TUNNEL ────────────
+    async function loadSystemHealth() {
+      const { ok, data } = await apiFetch('/api/v1/crm/system-health');
+      if (!ok || !data.success) return;
+      const grid = document.getElementById('health-cards-grid');
+      grid.innerHTML = `
+        <div class="metric-card">
+          <div class="metric-label">Runtime & Port Server</div>
+          <div class="metric-val">Port ${data.port}</div>
+          <div class="metric-sub">Node.js ${data.nodeVersion} (${data.hostname})</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Konsumsi RAM (Target &lt; 150 MB)</div>
+          <div class="metric-val" style="color:var(--ok);">${data.memoryRssMb} MB</div>
+          <div class="metric-sub">Heap Terpakai: ${data.memoryHeapUsedMb} MB | Uptime: ${data.uptimeSeconds} dtk</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">3 Database SQLite Native</div>
+          <div class="metric-val" style="color:var(--ok);">WAL MODE</div>
+          <div class="metric-sub">master.db, shopee.db, erp.db (busy_timeout=5000)</div>
+        </div>
+        <div class="metric-card">
+          <div class="metric-label">Cloudflare Quick Tunnel Aktif</div>
+          <div class="metric-val" style="font-size:0.95rem; word-break:break-all; color:var(--info);">
+            ${data.quickTunnelUrl || API_BASE}
+          </div>
+          <div class="metric-sub">Saklar Produksi: ${data.productionSwitches.modeLabel}</div>
+        </div>
+      `;
+    }
+
+    // Boot Aplikasi saat halaman dibuka
+    (async function boot() {
+      await resolveApiBaseUrl();
+      if (currentToken) {
+        const { ok, data } = await apiFetch('/api/v1/crm/auth/me');
+        if (ok && data.success && data.user) {
+          currentUser = data.user;
+          enterDashboardApp();
+          return;
+        }
+        localStorage.removeItem('meroket_crm_token');
+        currentToken = '';
+      }
+    })();
+
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js').catch(() => {});
     }

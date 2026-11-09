@@ -1,10 +1,10 @@
 {
-  "name": "Meroket Official Fashion & Apparel",
-  "short_name": "Meroket Fashion",
-  "description": "Katalog Resmi Pakaian & Apparel Fisik Brand Meroket Indonesia",
+  "name": "Meroket CRM & ERP Multi-Store Shopee",
+  "short_name": "Meroket CRM",
+  "description": "Aplikasi Dashboard CRM & ERP Internal Multi-Toko Shopee Pakaian Fisik Meroket (Portal Bos & Portal Karyawan Terisolasi)",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0f172a",
+  "background_color": "#0b1120",
   "theme_color": "#ea580c",
   "icons": [
     {
