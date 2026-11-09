@@ -1,0 +1,143 @@
+[
+  {
+    "sku": "MRK-CHINO-HTM-32",
+    "name": "Celana Chino Panjang Pria Slimfit Stretch Premium - Hitam",
+    "category": "Celana Chino",
+    "price": 129000,
+    "originalPrice": 185000,
+    "colors": [
+      "Hitam",
+      "Cream",
+      "Abu Tua",
+      "Mocca",
+      "Navy"
+    ],
+    "sizes": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36",
+      "38"
+    ],
+    "material": "Cotton Twill Stretch Suede Имpor (Tebal, Lembut & Melar)",
+    "stock": 145,
+    "shopeeUrl": "https://shopee.co.id/"
+  },
+  {
+    "sku": "MRK-CARGO-OLV-L",
+    "name": "Celana Cargo Panjang Pria Tactical Ripstop / Twill - Olive Army",
+    "category": "Celana Cargo",
+    "price": 139000,
+    "originalPrice": 199000,
+    "colors": [
+      "Olive Army",
+      "Hitam",
+      "Khaki",
+      "Abu Muda"
+    ],
+    "sizes": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "material": "Cotton Twill Heavy Duty 6 Saku Fungsional",
+    "stock": 98,
+    "shopeeUrl": "https://shopee.co.id/"
+  },
+  {
+    "sku": "MRK-KAOS-NVY-XL",
+    "name": "Kaos Polos Oversize / Regular Cotton Combed 24s Knitto - Navy",
+    "category": "Kaos Polos",
+    "price": 59000,
+    "originalPrice": 89000,
+    "colors": [
+      "Navy",
+      "Hitam",
+      "Putih Solid",
+      "Maroon",
+      "Sage Green"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "material": "100% Pure Cotton Combed 24s (Adem & Menyerap Keringat)",
+    "stock": 310,
+    "shopeeUrl": "https://shopee.co.id/"
+  },
+  {
+    "sku": "MRK-JEANS-BLU-32",
+    "name": "Celana Jeans Pria Denim 13 Oz Regular / Slim Straight - Bio Wash",
+    "category": "Celana Jeans",
+    "price": 155000,
+    "originalPrice": 225000,
+    "colors": [
+      "Bio Wash",
+      "Bio Blitz",
+      "Garment Black"
+    ],
+    "sizes": [
+      "28",
+      "29",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34"
+    ],
+    "material": "Denim 13 Oz Non-Fade Jahitan Rantai Standar Distro",
+    "stock": 84,
+    "shopeeUrl": "https://shopee.co.id/"
+  },
+  {
+    "sku": "MRK-KMJ-OXF-L",
+    "name": "Kemeja Pria Lengan Pendek & Panjang Oxford Premium - Putih / Navy",
+    "category": "Kemeja Pria",
+    "price": 115000,
+    "originalPrice": 165000,
+    "colors": [
+      "Putih",
+      "Navy",
+      "Biru Muda",
+      "Hitam"
+    ],
+    "sizes": [
+      "M",
+      "L",
+      "XL",
+      "XXL"
+    ],
+    "material": "Cotton Oxford Pique Lembut Anti Kusut",
+    "stock": 120,
+    "shopeeUrl": "https://shopee.co.id/"
+  },
+  {
+    "sku": "MRK-SHORT-CHINO-32",
+    "name": "Celana Pendek Chino Pria Santai Di Atas Lutut - Mocca",
+    "category": "Celana Pendek",
+    "price": 85000,
+    "originalPrice": 125000,
+    "colors": [
+      "Mocca",
+      "Hitam",
+      "Abu Tua",
+      "Cream"
+    ],
+    "sizes": [
+      "28",
+      "30",
+      "32",
+      "34",
+      "36"
+    ],
+    "material": "Cotton Twill Combed Stretch Nyaman Harian",
+    "stock": 210,
+    "shopeeUrl": "https://shopee.co.id/"
+  }
+]
